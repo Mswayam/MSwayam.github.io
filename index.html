@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="transition duration-300">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <!-- ✅ Tailwind CSS with dark mode support -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <script>
+    // Apply saved theme on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const theme = localStorage.getItem('theme');
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (theme === 'dark') {
+        html.classList.add('dark');
+        if (icon) icon.textContent = '🌞';
+      } else {
+        html.classList.remove('dark');
+        if (icon) icon.textContent = '🌙';
+      }
+    });
+
+    // Toggle theme
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '🌞' : '🌙';
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white transition duration-300">
+
+  <!-- Header -->
+  <header class="bg-blue-800 text-white p-4 sticky top-0 z-50 dark:bg-gray-800">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">My Portfolio</h1>
+      <nav class="space-x-4 flex items-center">
+        <a href="#welcome" class="hover:underline">Welcome</a>
+        <a href="#about" class="hover:underline">About Me</a>
+        <a href="#achievements" class="hover:underline">Achievements</a>
+        <a href="#goals" class="hover:underline">Goals</a>
+        <a href="#personal" class="hover:underline">Personal</a>
+        <button onclick="toggleDarkMode()" class="ml-4 px-3 py-1 bg-gray-200 text-black rounded dark:bg-gray-600 dark:text-white hover:scale-105 transition flex items-center space-x-2">
+          <span id="theme-icon">🌙</span>
+          
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="p-8 bg-white text-center dark:bg-gray-800">
+    <h2 class="text-3xl font-semibold mb-4">Welcome to My Portfolio!</h2>
+    <img src="WhatsApp Image 2025-05-19 at 09.23.02_e7158da1.jpg" alt="Swayam Mhaske"
+      class="mx-auto w-40 h-40 rounded-full mb-6 border-4 border-gray-600">
+    <p class="mb-4">Hi! I'm excited to share my journey and aspirations with you. Watch the video below to know more
+      about me.</p>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="p-8 bg-gray-100 dark:bg-gray-700">
+    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li><strong>Name:</strong> Swayam Suresh Mhaske</li>
+      <li><strong>Location:</strong> Mumbai, India</li>
+      <li><strong>Education:</strong> Diploma in Computer Engineering / Pursuing B-Tech in Computer Engineering</li>
+      <li><strong>Languages Known:</strong> English, Hindi, Marathi, Gujarati.</li>
+    </ul>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="p-8 bg-white dark:bg-gray-800">
+    <h2 class="text-2xl font-semibold mb-4">Achievements</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Completed .NET certification course with O Grade</li>
+      <li>Received 3rd Prize in Hackathon Competition at Viva College</li>
+      <li>Top Scorer in Diploma</li>
+    </ul>
+  </section>
+
+  <!-- Goals -->
+  <section id="goals" class="p-8 bg-gray-100 dark:bg-gray-700">
+    <h2 class="text-2xl font-semibold mb-4">Future Goals</h2>
+    <p>I aim to become a successful software developer, contributing to open-source and building impactful tech
+      solutions for social good.</p>
+  </section>
+
+  <!-- Personal Side -->
+  <section id="personal" class="p-8 bg-white dark:bg-gray-800">
+    <h2 class="text-2xl font-semibold mb-4">My Personal Side</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li><strong>Hobbies:</strong> Reading, Coding, Music - I love them because they relax and inspire me.</li>
+      <li><strong>Role Models:</strong> Elon Musk, A.P.J. Abdul Kalam - for their vision and perseverance.</li>
+      <li><strong>Favourite Books:</strong> "Atomic Habits", "Deep Work" - they taught me focus and consistency.</li>
+      <li><strong>Websites:</strong> GitHub, Medium - great for learning and sharing.</li>
+      <li><strong>Startups:</strong> Notion, Figma - for creative productivity tools.</li>
+      <li><strong>Volunteering:</strong> Taught coding to underprivileged kids via Dayanand NGO.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white text-center p-4 mt-8 dark:bg-gray-800">
+    <p>&copy; 2025 Swayam Mhaske. All rights reserved.</p>
+    <p>Connect with me on <a href="https://github.com/yourusername" class="underline">GitHub</a></p>
+  </footer>
+
+</body>
+
+</html>
