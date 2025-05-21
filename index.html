@@ -108,6 +108,20 @@
     </ul>
   </section>
 
+  <!-- Quote Section -->
+  <section class="flex justify-center items-center py-8 bg-gray-50 dark:bg-gray-900">
+    <div class="w-full max-w-md mx-auto p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800">
+      <div id="quote-box" class="mb-4 text-center">
+        <p id="quote-text" class="text-lg italic">Click the button to see a quote!</p>
+        <p id="quote-author" class="mt-2 text-sm text-right text-gray-500 dark:text-gray-300"></p>
+      </div>
+      <button onclick="showRandomQuote()"
+        class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        Show Me a Quote
+      </button>
+    </div>
+  </section>
+
   <html lang="en" class="scroll-smooth">
 
   <head>
@@ -173,15 +187,30 @@
           });
         });
 
-      // Load Quote from Public API
-      fetch('https://api.quotable.io/random')
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('quote').innerHTML = `
-          <p>"${data.content}"</p>
-          <p class="text-right mt-2 text-sm">- ${data.author}</p>
-        `;
-        });
+      // Local quotes array
+const quotes = [
+  { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+  { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+  { text: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
+  { text: "Don't let yesterday take up too much of today.", author: "Will Rogers" },
+  { text: "It's not whether you get knocked down, it's whether you get up.", author: "Vince Lombardi" },
+  { text: "If you are working on something exciting, it will keep you motivated.", author: "Steve Jobs" },
+  { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+  { text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { text: "Dream bigger. Do bigger.", author: "Unknown" },
+  { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+  { text: "Great things never come from comfort zones.", author: "Unknown" },
+  { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+  { text: "Sometimes later becomes never. Do it now.", author: "Unknown" },
+  { text: "Little things make big days.", author: "Unknown" }
+];
+
+function showRandomQuote() {
+  const random = Math.floor(Math.random() * quotes.length);
+  document.getElementById('quote-text').textContent = `"${quotes[random].text}"`;
+  document.getElementById('quote-author').textContent = `- ${quotes[random].author}`;
+}
     </script>
 
   </body>
