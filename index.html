@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" class="transition duration-300">
 
@@ -221,4 +222,229 @@ function showRandomQuote() {
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en" class="transition duration-300">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <link rel="icon" href="/assets/favicon.ico" />
+
+  <!-- ✅ Tailwind CSS with dark mode support -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <script>
+    // Apply saved theme on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const theme = localStorage.getItem('theme');
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (theme === 'dark') {
+        html.classList.add('dark');
+        if (icon) icon.textContent = '🌞';
+      } else {
+        html.classList.remove('dark');
+        if (icon) icon.textContent = '🌙';
+      }
+    });
+
+    // Toggle theme
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '🌞' : '🌙';
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white transition duration-300">
+
+  <!-- Header -->
+  <header class="bg-blue-800 text-white p-4 sticky top-0 z-50 dark:bg-gray-800">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">My Portfolio</h1>
+      <nav class="space-x-4 flex items-center">
+        <a href="#welcome" class="hover:underline">Welcome</a>
+        <a href="#about" class="hover:underline">About Me</a>
+        <a href="#achievements" class="hover:underline">Achievements</a>
+        <a href="#goals" class="hover:underline">Goals</a>
+        <a href="#personal" class="hover:underline">Personal</a>
+        <button onclick="toggleDarkMode()"
+          class="ml-4 px-3 py-1 bg-gray-200 text-black rounded dark:bg-gray-600 dark:text-white hover:scale-105 transition flex items-center space-x-2">
+          <span id="theme-icon">🌙</span>
+
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="p-8 bg-white text-center dark:bg-gray-800">
+    <h2 class="text-3xl font-semibold mb-4">Welcome to My Portfolio!</h2>
+    <img src="assets/WhatsApp Image 2025-05-19 at 09.23.02_e7158da1.jpg" alt="Swayam Mhaske"
+      class="mx-auto w-40 h-40 rounded-full mb-6 border-4 border-gray-600">
+    <p class="mb-4">Hi! I'm excited to share my journey and aspirations with you. Watch the video below to know more
+      about me.</p>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="p-8 bg-gray-100 dark:bg-gray-700">
+    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li><strong>Name:</strong> Swayam Suresh Mhaske</li>
+      <li><strong>Location:</strong> Mumbai, India</li>
+      <li><strong>Education:</strong> Diploma in Computer Engineering / Pursuing B-Tech in Computer Engineering</li>
+      <li><strong>Languages Known:</strong> English, Hindi, Marathi, Gujarati.</li>
+    </ul>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="p-8 bg-white dark:bg-gray-800">
+    <h2 class="text-2xl font-semibold mb-4">Achievements</h2>
+    <ul class="list-disc pl-6 space-y-1">
+    </ul>
+  </section>
+
+  <!-- Goals -->
+  <section id="goals" class="p-8 bg-gray-100 dark:bg-gray-700">
+    <h2 class="text-2xl font-semibold mb-4">Future Goals</h2>
+    <p>I aim to become a successful software developer, contributing to open-source and building impactful tech
+      solutions for social good.</p>
+  </section>
+
+  <!-- Personal Side -->
+  <section id="personal" class="p-8 bg-white dark:bg-gray-800">
+    <h2 class="text-2xl font-semibold mb-4">My Personal Side</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li><strong>Hobbies:</strong> Reading, Coding, Music - I love them because they relax and inspire me.</li>
+      <li><strong>Role Models:</strong> Elon Musk, A.P.J. Abdul Kalam - for their vision and perseverance.</li>
+      <li><strong>Favourite Books:</strong> "Atomic Habits", "Deep Work" - they taught me focus and consistency.</li>
+      <li><strong>Websites:</strong> GitHub, Medium - great for learning and sharing.</li>
+      <li><strong>Startups:</strong> Notion, Figma - for creative productivity tools.</li>
+      <li><strong>Volunteering:</strong> Taught coding to underprivileged kids via Dayanand NGO.</li>
+    </ul>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="flex justify-center items-center py-8 bg-gray-50 dark:bg-gray-900">
+    <div class="w-full max-w-md mx-auto p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800">
+      <div id="quote-box" class="mb-4 text-center">
+        <p id="quote-text" class="text-lg italic">Click the button to see a quote!</p>
+        <p id="quote-author" class="mt-2 text-sm text-right text-gray-500 dark:text-gray-300"></p>
+      </div>
+      <button onclick="showRandomQuote()"
+        class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        Show Me a Quote
+      </button>
+    </div>
+  </section>
+
+  <html lang="en" class="scroll-smooth">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="icon" href="favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800 font-sans">
+
+
+    <div style="display: flex; justify-content: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/GoJXALuvP_g?si=_4thbHzrnAQMIROv"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="max-w-4xl mx-auto mt-10 p-6 bg-blue rounded shadow">
+
+      <ul class="space-y-2">
+        <li><a href="tel:+917709985436" class="text-blue-600 underline">📞 Call Me</a></li>
+        <li><a href="https://wa.me/917709985436" class="text-green-600 underline">💬 WhatsApp</a></li>
+        <li><a href="mailto:223swayam2011@sjcem.edu.in" class="text-purple-600 underline">✉️ Email Me</a></li>
+        <li class="pt-4">
+          <iframe class="w-full h-60 rounded"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609889845!2d72.74110165977914!3d19.082197839738543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63f0f3a3ebf%3A0x4d8c6eb10a89383!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1618475153029!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy"></iframe>
+        </li>
+      </ul>
+
+      <div class="mt-4 text-center">
+  <p class="font-semibold mb-2">Socials:</p>
+  <div class="inline-block space-x-4">
+    <a href="https://github.com/Mswayam/" class="text-lightblue-800 underline">GitHub</a>
+    <span>|</span>
+    <a href="https://www.linkedin.com/in/swayammhaske" class="text-blue-700 underline">LinkedIn</a>
+    <span>|</span>
+    <a href="https://instagram.com/swayam_987/" class="text-pink-500 underline">Instagram</a>
+  </div>
+</div>
+</section>
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm text-gray-500">
+      &copy; 2025 My Portfolio. Built with 💙 and Tailwind CSS.
+    </footer>
+
+    <!-- JS Scripts -->
+    <script>
+      // Load JSON Data
+      fetch('data.json')
+        .then(res => res.json())
+        .then(data => {
+          const container = document.getElementById('achievements');
+          data.forEach(item => {
+            const div = document.createElement('div');
+            div.className = "p-3 border border-gray-200 rounded";
+            div.textContent = `${item.title} (${item.year})`;
+            container.appendChild(div);
+          });
+        });
+
+      // Local quotes array
+const quotes = [
+  { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+  { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+  { text: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
+  { text: "Don't let yesterday take up too much of today.", author: "Will Rogers" },
+  { text: "It's not whether you get knocked down, it's whether you get up.", author: "Vince Lombardi" },
+  { text: "If you are working on something exciting, it will keep you motivated.", author: "Steve Jobs" },
+  { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+  { text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { text: "Dream bigger. Do bigger.", author: "Unknown" },
+  { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+  { text: "Great things never come from comfort zones.", author: "Unknown" },
+  { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+  { text: "Sometimes later becomes never. Do it now.", author: "Unknown" },
+  { text: "Little things make big days.", author: "Unknown" }
+];
+
+function showRandomQuote() {
+  const random = Math.floor(Math.random() * quotes.length);
+  document.getElementById('quote-text').textContent = `"${quotes[random].text}"`;
+  document.getElementById('quote-author').textContent = `- ${quotes[random].author}`;
+}
+    </script>
+
+  </body>
+
+  </html>
+
+</body>
+
+>>>>>>> b057de8 (Favicon Fix)
 </html>
