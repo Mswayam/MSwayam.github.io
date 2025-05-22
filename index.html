@@ -44,27 +44,26 @@
 
 <body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white transition duration-300">
 
-  <!-- Header -->
-  <header class="bg-blue-800 text-white p-4 sticky top-0 z-50 dark:bg-gray-800">
+  <!-- Header with DaisyUI and Hamburger -->
+  <header class="navbar bg-blue-800 text-white sticky top-0 z-50 dark:bg-gray-800">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">My Portfolio</h1>
       <!-- Hamburger Button (Mobile) -->
-      <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-        aria-label="Open Menu" onclick="toggleMenu()">
-        <span class="block w-6 h-0.5 bg-white mb-1 transition-all"></span>
-        <span class="block w-6 h-0.5 bg-white mb-1 transition-all"></span>
-        <span class="block w-6 h-0.5 bg-white transition-all"></span>
+      <button id="menu-btn" class="md:hidden btn btn-square btn-ghost" aria-label="Open Menu" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
       </button>
       <!-- Navigation -->
       <nav id="main-nav"
-        class="space-x-4 flex-col md:flex-row flex items-center md:static absolute top-16 left-0 w-full md:w-auto bg-blue-800 dark:bg-gray-800 md:bg-transparent md:dark:bg-transparent md:flex md:space-x-4 md:space-y-0 space-y-4 md:space-y-0 px-4 py-4 md:p-0 transition-all duration-300 z-40 hidden md:flex">
-        <a href="#welcome" class="hover:underline">Welcome</a>
-        <a href="#about" class="hover:underline">About Me</a>
-        <a href="#achievements" class="hover:underline">Achievements</a>
-        <a href="#goals" class="hover:underline">Goals</a>
-        <a href="#personal" class="hover:underline">Personal</a>
+        class="menu menu-horizontal p-0 space-x-2 flex-col md:flex-row flex items-center md:static absolute top-16 left-0 w-full md:w-auto bg-blue-800 dark:bg-gray-800 md:bg-transparent md:dark:bg-transparent md:flex md:space-x-2 md:space-y-0 space-y-2 md:space-y-0 px-4 py-4 md:p-0 transition-all duration-300 z-40 hidden md:flex">
+        <a href="#welcome" class="btn btn-ghost normal-case text-lg">Welcome</a>
+        <a href="#about" class="btn btn-ghost normal-case text-lg">About Me</a>
+        <a href="#achievements" class="btn btn-ghost normal-case text-lg">Achievements</a>
+        <a href="#goals" class="btn btn-ghost normal-case text-lg">Goals</a>
+        <a href="#personal" class="btn btn-ghost normal-case text-lg">Personal</a>
         <button onclick="toggleDarkMode()"
-          class="ml-4 px-3 py-1 bg-gray-200 text-black rounded dark:bg-gray-600 dark:text-white hover:scale-105 transition flex items-center space-x-2">
+          class="ml-4 btn btn-outline btn-sm dark:btn-primary flex items-center space-x-2">
           <span id="theme-icon">🌙</span>
         </button>
       </nav>
